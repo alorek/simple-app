@@ -4,10 +4,12 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { devToolsEnhancer } from 'redux-devtools-extension';
-import 'normalize.css/normalize.css';
-import './index.css';
-import App from './containers/App';
 
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+import './index.css';
+
+import App from './containers/App';
 import RecordView from './components/RecordView';
 import reducer from './reducers';
 
