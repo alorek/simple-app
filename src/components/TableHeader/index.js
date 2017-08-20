@@ -10,7 +10,7 @@ class TableHeader extends Component {
         const showSorting = column.id === this.props.sortKey;
         const triangleDirection = this.props.sortOrder === 'asc' ? 'top' : 'bottom';
         const iconClass = `glyphicon glyphicon-triangle-${triangleDirection}`;
-        console.log(this.props.sortKey);
+
         return (
             <th onClick={ () => { this.props.sortTable(column.id, 'asc'); } }>
                 { column.label }

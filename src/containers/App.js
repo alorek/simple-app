@@ -6,7 +6,7 @@ import TablePagination from '../components/TablePagination';
 class App extends Component {
     render() {
         return (
-            <div>
+            <div className="content-wrapper">
                 <div className="table-container">
                     <Table />
                     <TablePagination />

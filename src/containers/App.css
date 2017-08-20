@@ -12,6 +12,9 @@
 .App-intro {
   font-size: large;
 }
+.content-wrapper {
+    padding-top: 20px;
+}
 
 .table-container {
 	max-width:700px;

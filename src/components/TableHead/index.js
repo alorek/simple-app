@@ -9,7 +9,7 @@ class TableHead extends Component {
                 label: key === 'viewable' ? '' : titleize(key.replace('_', ' ')),
                 id: key
             };
-            return <TableHeader column = { column } />
+            return <TableHeader key={key} column = { column } />
         });
     }
 

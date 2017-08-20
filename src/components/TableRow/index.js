@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom'
 
 class TableRow extends Component {
     render() {
@@ -7,14 +8,13 @@ class TableRow extends Component {
         const link = `/record/${recordInfo.id}`;
 
         return (
-            <tr>
+            <tr key={recordInfo.id}>
                 <td>{recordInfo.resource_type}</td>
                 <td>{recordInfo.display_title}</td>
                 <td>{recordInfo.media_type}</td>
                 <td>{recordInfo.language}</td>
-                <td>{ isViewable ?
-                    <a href={ link } className="glyphicon glyphicon-eye-open"></a> :
-                    null }
+
+                <td>{isViewable ? <Link to={link} ><span className="glyphicon glyphicon-eye-open"></span></Link> : null}
                 </td>
             </tr>
         );
