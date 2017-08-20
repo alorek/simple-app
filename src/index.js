@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 import './index.css';
 
 import App from './containers/App';
-import RecordView from './components/RecordView';
+import RecordViewContainer from './containers/RecordViewContainer';
 import reducer from './reducers';
 
 const store = createStore(reducer, devToolsEnhancer());
@@ -23,7 +23,7 @@ render((
                     <h2>Simple App</h2>
                 </div>
                 <Route exact path="/" component = { App } />
-                <Route path="/record/:id" component = { RecordView } />
+                <Route path="/record/:id/" component = { RecordViewContainer } />
             </div>
         </Router>
     </Provider>
