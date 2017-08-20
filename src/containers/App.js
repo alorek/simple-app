@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Table from '../components/Table/Table';
-import TablePagination from '../components/TablePagination/TablePagination';
-
+import Table from '../components/Table';
+import TablePagination from '../components/TablePagination';
 
 class App extends Component {
     render() {
