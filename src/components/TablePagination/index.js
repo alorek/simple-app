@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import times from 'lodash/times';
-import { selectPage } from '../../actions';
+import { selectPage, nextPage, previousPage } from '../../actions';
 import './pagination.css'
 
 
@@ -15,26 +15,36 @@ class TablePagination extends Component {
             const isActive = page === currentPage;
 
             return (
-                <span
+                <li
+                key={i}
                 onClick={ () => { self.props.selectPage(page); } }
-                className= { isActive ? 'active' : ''} >
+                className= { isActive ? 'active' : ''} ><a>
                     { page }
-                </span>
+                </a></li>
             );
         });
 
         return (
-            <div className='table-pagination'>
+            <ul className="pagination">
+                <li
+                    onClick={ () => { this.props.previousPage(); } }>
+                    <a>&laquo;</a>
+                </li>
                 { pages }
-            </div>
-
+                <li
+                    onClick={ () => { this.props.nextPage(); } }>
+                    <a>&raquo;</a>
+                </li>
+            </ul>
         );
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        selectPage: selectPage
+        selectPage: selectPage,
+        nextPage: nextPage,
+        previousPage: previousPage
     }, dispatch);
 }
 

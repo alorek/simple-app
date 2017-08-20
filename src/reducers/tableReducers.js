@@ -37,6 +37,34 @@ export default function tableReducer (state = initialState , action) {
                 tableData: currentPageData,
                 currentPage: action.currentPage
             });
+        case 'NEXT_PAGE':
+            const nextPage = state.currentPage + 1;
+            sortedData = sortData(state.data, state.sortKey, state.sortOrder);
+
+            if (nextPage > data.length/PAGE_SIZE) {
+                return state;
+            }
+
+            currentPageData = getPage(sortedData, nextPage, PAGE_SIZE);
+
+            return Object.assign({}, state, {
+                tableData: currentPageData,
+                currentPage: nextPage
+            });
+        case 'PREVIOUS_PAGE':
+            const previousPage = state.currentPage - 1;
+            sortedData = sortData(state.data, state.sortKey, state.sortOrder);
+
+            if (previousPage < 1) {
+                return state;
+            }
+
+            currentPageData = getPage(sortedData, previousPage, PAGE_SIZE);
+
+            return Object.assign({}, state, {
+                tableData: currentPageData,
+                currentPage: previousPage
+            });
         default:
             sortedData = sortData(state.data, state.sortKey, state.sortOrder);
             currentPageData = getPage(sortedData, 1, PAGE_SIZE);

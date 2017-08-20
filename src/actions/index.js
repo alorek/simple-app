@@ -4,11 +4,23 @@ export const sortTable = (sortBy, sortOrder) => {
         sortBy,
         sortOrder
     };
-}
+};
 
 export const selectPage = (currentPage) => {
     return {
         type: 'SELECT_PAGE',
         currentPage
     };
-}
+};
+
+export const nextPage = () => {
+    return {
+        type: 'NEXT_PAGE'
+    };
+};
+
+export const previousPage = () => {
+    return {
+        type: 'PREVIOUS_PAGE'
+    };
+};
