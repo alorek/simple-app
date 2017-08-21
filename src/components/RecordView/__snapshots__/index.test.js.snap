@@ -3,7 +3,7 @@
 exports[`RecordView renders correctly 1`] = `
 <div>
   <p>
-    Not Found
+    Record not found
   </p>
 </div>
 `;

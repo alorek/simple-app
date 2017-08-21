@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import times from 'lodash/times';
 import { selectPage, nextPage, previousPage } from '../../actions';
-import './pagination.css'
-
 
 class TablePagination extends Component {
     render() {
@@ -25,7 +23,7 @@ class TablePagination extends Component {
         });
 
         return (
-            <ul className="pagination">
+            <ul className="pagination pull-right">
                 <li
                     onClick={ () => { this.props.previousPage(); } }>
                     <a>&laquo;</a>

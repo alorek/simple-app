@@ -8,11 +8,19 @@ class RecordViewContainer extends Component {
         const goBack = () => {
             this.props.history.goBack();
         };
+        const style = {
+            margin: '0 auto',
+            maxWidth: '800px'
+        };
 
         return (
             <div className="content-wrapper">
-                <div className="record-wrapper">
-                    <Button label="Go Back" actionFunc={ goBack } />
+                <div className="record-wrapper" style={ style }>
+                    <Button
+                        label="Back to records"
+                        actionFunc={ goBack }
+                        className="btn btn-primary"
+                        iconClass="glyphicon glyphicon-arrow-left" />
                     <RecordView recordId={ recordId } />
                 </div>
             </div>

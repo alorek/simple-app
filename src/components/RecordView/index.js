@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import './record.css';
 
 class RecordView extends Component {
+
+    renderStandard(standard) {
+
+        return (
+            <div className="alert alert-info">
+                <p>Standard: { standard.id }</p>
+                <p>{ standard.description }</p>
+            </div>
+        );
+    }
+
     render() {
     	const recordId = this.props.recordId;
 
@@ -11,40 +21,55 @@ class RecordView extends Component {
     	});
 
     	if (currentRecord) {
-    		let standard = (currentRecord.standards || {}).standard;
-            let mediaIcon = `../../assets/${currentRecord.media_type}.png`;
-            let langIcon = `../../assets/${currentRecord.language}.png`;
+    		const standard = (currentRecord.standards || {}).standard;
+            const mediaIcon = `../../assets/${currentRecord.media_type}.png`;
+            const langIcon = `../../assets/${currentRecord.language}.png`;
+            const langAlt = `Language: ${currentRecord.language}`;
+            const mediaAlt = `Media Type: ${currentRecord.media_type}`;
+            const cardStyle = {
+                maxWidth: '500px'
+            };
+            const h4Style = {
+                color: '#666666'
+            };
+            const topStyle = {
+                 width: '100%'
+            };
+            const additionalTextStyle = {
+                color: '#666666',
+                fontSize: '14px'
+            };
+
 
 	        return (
 
-                <div className="card">
-                    <div className="pull-left top">
-                        <h4 className="pull-left">
+                <div className="card" style={ cardStyle }>
+                    <div className="pull-left" style={ topStyle }>
+                        <h4 className="pull-left" style={ h4Style }>
                             { currentRecord.categorization } | { currentRecord.resource_type }
                         </h4>
                         <div className="pull-right">
                             <img
                                 height="24px"
                                 width="24px"
-                                src={mediaIcon}
-                                alt="Media Type: {currentRecord.media_type}" />
+                                src={ mediaIcon }
+                                alt={ mediaAlt } />
                             <img
                                 height="34px"
-                                src={langIcon}
-                                alt="Language: {currentRecord.language}"/>
+                                src={ langIcon }
+                                alt={ langAlt }/>
                         </div>
                     </div>
                     <h3>{ currentRecord.display_title }</h3>
 			        <p>{ currentRecord.meaningful_description }</p>
-			        <p className="additional-text">{ currentRecord.additional_text }</p>
-			        { standard && standard.description ? <p>{ standard.description } ( { standard.id } )</p> : null	}
-			        <p></p>
+			        <p style={ additionalTextStyle }>{ currentRecord.additional_text }</p>
+			        { standard && standard.description ? this.renderStandard(standard) : null }
                 </div>
 	        );
     	}
 
     	return (
-	        	<div><p>Not Found</p></div>
+	        <div><p>Record not found</p></div>
 	    );
     }
 }

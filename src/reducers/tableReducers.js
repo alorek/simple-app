@@ -27,6 +27,7 @@ export default function tableReducer (state = initialState , action) {
             return Object.assign({}, state, {
                 tableData: currentPageData,
                 sortKey: action.sortBy,
+                sortOrder: action.sortOrder,
                 currentPage: 1
             });
         case 'SELECT_PAGE':

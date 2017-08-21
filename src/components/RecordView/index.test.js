@@ -11,7 +11,7 @@ test('RecordView renders correctly', () => {
 
     const tree = renderer.create(
         <Provider store={ store }>
-                <RecordView  />
+            <RecordView  />
         </Provider>
     ).toJSON();
 

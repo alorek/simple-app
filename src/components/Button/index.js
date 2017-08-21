@@ -1,12 +1,16 @@
 import React from 'react';
 
 const Button = (props) =>  {
+    const iconStyle = {marginRight: '5px'};
     return (
         <button
-            className="btn btn-default"
+            className={ props.className }
             onClick={ () => { props.actionFunc() } }
         >
-            { props.label }
+        { props.iconClass ?
+            <span style={ iconStyle } className={ props.iconClass }></span> :
+                null }
+            <span>{ props.label }</span>
         </button>
     );
 }

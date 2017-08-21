@@ -4,11 +4,16 @@ exports[`TableHead renders correctly 1`] = `
 <thead>
   <tr>
     <th
+      className="sorting-header"
       onClick={[Function]}
     >
-      Resource Type
       <span
-        className="glyphicon glyphicon-triangle-top"
+        className="pull-left"
+      >
+        Resource Type
+      </span>
+      <span
+        className="pull-right glyphicon glyphicon-triangle-top"
       />
     </th>
   </tr>

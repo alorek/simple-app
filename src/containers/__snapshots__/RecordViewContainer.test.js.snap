@@ -6,16 +6,32 @@ exports[`RecordViewContainer renders correctly 1`] = `
 >
   <div
     className="record-wrapper"
+    style={
+      Object {
+        "margin": "0 auto",
+        "maxWidth": "800px",
+      }
+    }
   >
     <button
-      className="btn btn-default"
+      className="btn btn-primary"
       onClick={[Function]}
     >
-      Go Back
+      <span
+        className="glyphicon glyphicon-arrow-left"
+        style={
+          Object {
+            "marginRight": "5px",
+          }
+        }
+      />
+      <span>
+        Back to records
+      </span>
     </button>
     <div>
       <p>
-        Not Found
+        Record not found
       </p>
     </div>
   </div>

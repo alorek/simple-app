@@ -5,9 +5,16 @@ import './tableViewContainer.css';
 
 class TableViewContainer extends Component {
     render() {
+
+        const tableContainerStyles = {
+            maxWidth: '700px',
+            margin: '0 auto',
+            backgroundColor: '#ffffff'
+        };
+
         return (
             <div className="content-wrapper">
-                <div className="table-container">
+                <div className="table-container card" style={ tableContainerStyles }>
                     <Table />
                     <TablePagination />
                 </div>

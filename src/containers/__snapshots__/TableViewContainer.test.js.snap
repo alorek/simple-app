@@ -5,7 +5,14 @@ exports[`TableViewContainer renders correctly 1`] = `
   className="content-wrapper"
 >
   <div
-    className="table-container"
+    className="table-container card"
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+        "margin": "0 auto",
+        "maxWidth": "700px",
+      }
+    }
   >
     <table
       className="table table-striped"
@@ -13,37 +20,61 @@ exports[`TableViewContainer renders correctly 1`] = `
       <thead>
         <tr>
           <th
+            className="sorting-header"
             onClick={[Function]}
           >
-            Resource Type
             <span
-              className="glyphicon glyphicon-triangle-top"
+              className="pull-left"
+            >
+              Resource Type
+            </span>
+            <span
+              className="pull-right glyphicon glyphicon-triangle-top"
             />
           </th>
           <th
+            className="sorting-header"
             onClick={[Function]}
           >
-            Display Title
+            <span
+              className="pull-left"
+            >
+              Display Title
+            </span>
           </th>
           <th
+            className="sorting-header"
             onClick={[Function]}
           >
-            Media Type
+            <span
+              className="pull-left"
+            >
+              Media Type
+            </span>
           </th>
           <th
+            className="sorting-header"
             onClick={[Function]}
           >
-            Language
+            <span
+              className="pull-left"
+            >
+              Language
+            </span>
           </th>
           <th
+            className="sorting-header"
             onClick={[Function]}
           >
-            
+            <span
+              className="pull-left"
+            >
+              
+            </span>
           </th>
         </tr>
       </thead>
       <tbody>
-         
         <tr>
           <td>
             Agile
@@ -155,11 +186,10 @@ exports[`TableViewContainer renders correctly 1`] = `
             </a>
           </td>
         </tr>
-         
       </tbody>
     </table>
     <ul
-      className="pagination"
+      className="pagination pull-right"
     >
       <li
         onClick={[Function]}
