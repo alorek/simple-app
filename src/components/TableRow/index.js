@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 class TableRow extends Component {
     render() {
-        const recordInfo = this.props.data;
-        const isViewable = recordInfo.viewable === 'true';
+        const recordInfo = this.props.data || {};
+        const isViewable = (recordInfo).viewable === 'true';
         const link = `/record/${recordInfo.id}`;
 
         return (

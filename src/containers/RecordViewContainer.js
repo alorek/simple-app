@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import RecordView from '../components/RecordView';
 import Button from '../components/Button';
 
@@ -9,6 +8,7 @@ class RecordViewContainer extends Component {
         const goBack = () => {
             this.props.history.goBack();
         };
+
         return (
             <div className="content-wrapper">
                 <div className="record-wrapper">

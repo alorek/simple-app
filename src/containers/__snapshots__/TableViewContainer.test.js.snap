@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableViewContainer renders correctly 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    className="table-container"
+  >
+    <table
+      className="table table-striped"
+    >
+      <thead>
+        <tr>
+          <th
+            onClick={[Function]}
+          >
+            Resource Type
+            <span
+              className="glyphicon glyphicon-triangle-top"
+            />
+          </th>
+          <th
+            onClick={[Function]}
+          >
+            Display Title
+          </th>
+          <th
+            onClick={[Function]}
+          >
+            Media Type
+          </th>
+          <th
+            onClick={[Function]}
+          >
+            Language
+          </th>
+          <th
+            onClick={[Function]}
+          >
+            
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+         
+        <tr>
+          <td>
+            Agile
+          </td>
+          <td>
+            Agile Development
+          </td>
+          <td>
+            flash
+          </td>
+          <td>
+            en-us
+          </td>
+          <td>
+            <a
+              href="/record/2166"
+              onClick={[Function]}
+            >
+              <span
+                className="glyphicon glyphicon-eye-open"
+              />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Agile
+          </td>
+          <td>
+            Scrum
+          </td>
+          <td>
+            flash
+          </td>
+          <td>
+            en-us
+          </td>
+          <td>
+            <a
+              href="/record/1401"
+              onClick={[Function]}
+            >
+              <span
+                className="glyphicon glyphicon-eye-open"
+              />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Agile
+          </td>
+          <td>
+            Test Driven Development
+          </td>
+          <td>
+            pdf
+          </td>
+          <td>
+            en-us
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>
+            Programming
+          </td>
+          <td>
+            My Adventures in CSS
+          </td>
+          <td>
+            html
+          </td>
+          <td>
+            en-us
+          </td>
+          <td>
+            <a
+              href="/record/2133"
+              onClick={[Function]}
+            >
+              <span
+                className="glyphicon glyphicon-eye-open"
+              />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Programming
+          </td>
+          <td>
+            My Adventures in JavaScript
+          </td>
+          <td>
+            flash
+          </td>
+          <td>
+            en-us
+          </td>
+          <td>
+            <a
+              href="/record/2189"
+              onClick={[Function]}
+            >
+              <span
+                className="glyphicon glyphicon-eye-open"
+              />
+            </a>
+          </td>
+        </tr>
+         
+      </tbody>
+    </table>
+    <ul
+      className="pagination"
+    >
+      <li
+        onClick={[Function]}
+      >
+        <a>
+          «
+        </a>
+      </li>
+      <li
+        className="active"
+        onClick={[Function]}
+      >
+        <a>
+          1
+        </a>
+      </li>
+      <li
+        className=""
+        onClick={[Function]}
+      >
+        <a>
+          2
+        </a>
+      </li>
+      <li
+        onClick={[Function]}
+      >
+        <a>
+          »
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

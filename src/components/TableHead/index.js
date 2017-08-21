@@ -3,6 +3,7 @@ import { titleize } from '../../utilities/textUtils';
 import TableHeader from '../TableHeader';
 
 class TableHead extends Component {
+
     renderColumns() {
         return this.props.dataKeys.map(key => {
             const column = {

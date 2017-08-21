@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableHead renders correctly 1`] = `
+<thead>
+  <tr>
+    <th
+      onClick={[Function]}
+    >
+      Resource Type
+      <span
+        className="glyphicon glyphicon-triangle-top"
+      />
+    </th>
+  </tr>
+</thead>
+`;

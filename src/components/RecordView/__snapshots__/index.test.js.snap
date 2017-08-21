@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecordView renders correctly 1`] = `
+<div>
+  <p>
+    Not Found
+  </p>
+</div>
+`;

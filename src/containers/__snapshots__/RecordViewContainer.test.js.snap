@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecordViewContainer renders correctly 1`] = `
+<div
+  className="content-wrapper"
+>
+  <div
+    className="record-wrapper"
+  >
+    <button
+      className="btn btn-default"
+      onClick={[Function]}
+    >
+      Go Back
+    </button>
+    <div>
+      <p>
+        Not Found
+      </p>
+    </div>
+  </div>
+</div>
+`;

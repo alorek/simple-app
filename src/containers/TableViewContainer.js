@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
 import Table from '../components/Table';
 import TablePagination from '../components/TablePagination';
+import './tableViewContainer.css';
 
-class App extends Component {
+class TableViewContainer extends Component {
     render() {
         return (
             <div className="content-wrapper">
@@ -16,4 +16,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default TableViewContainer;

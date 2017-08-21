@@ -7,7 +7,7 @@ class Table extends Component {
 
     createRows () {
         return (this.props.tableData || []).map(row => {
-            return <TableRow key = { row.id } data = { row } />
+            return <TableRow key={ row.id } data={ row } />
         });
     }
 

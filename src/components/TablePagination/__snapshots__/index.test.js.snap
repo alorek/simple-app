@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TablePagination renders correctly 1`] = `
+<ul
+  className="pagination"
+>
+  <li
+    onClick={[Function]}
+  >
+    <a>
+      «
+    </a>
+  </li>
+  <li
+    className="active"
+    onClick={[Function]}
+  >
+    <a>
+      1
+    </a>
+  </li>
+  <li
+    className=""
+    onClick={[Function]}
+  >
+    <a>
+      2
+    </a>
+  </li>
+  <li
+    onClick={[Function]}
+  >
+    <a>
+      »
+    </a>
+  </li>
+</ul>
+`;
