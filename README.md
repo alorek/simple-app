@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-#Setup instructions:
-Using node v6.11.2
+# Setup instructions:
+Using node v6.11.2<br>
 If you're using nvm run `nvm install`
 
 In the project directory:
