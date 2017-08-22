@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
+    background: #f7fafd;
     font-family: 'Roboto', sans-serif;
+    height:100%;
     margin: 0;
     padding: 0;
-    height:100%;
-    background: #f7fafd;
 }
 
 #app {
@@ -16,26 +16,94 @@ body {
     background-color: #667f96;;
     border-bottom: 1px solid #e4e4e4;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
     padding: 10px 20px;
     width: 100%;
-    color: #ffffff;
 }
 
 .content-wrapper {
-    padding-top: 30px;
+    padding: 30px 10px;
 }
 
 .card {
+    background: white;
     border: 1px solid #eeeeee;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
     color: #444444;
     font-size: 16px;
     margin: 10px auto;
-    padding: 15px;
-    background: white;
+    padding: 10px;
+}
+
+/* Table styles */
+
+table{
+    table-layout: fixed;
+    width: 100%;
+}
+
+th:first-child,
+td:first-child {
+    width: 20%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 35%;
+}
+
+th.sorting-header {
+    background-color: #eaeaea;
+    color: #337ab7;
 }
 
 th.sorting-header:hover {
     cursor: pointer;
 }
 
+/* Responsive styles */
+
+@media screen and (max-width: 800px) {
+    .card {
+        font-size: 0.9em;
+    }
+
+    .card h3 {
+        font-size: 1.25em;
+    }
+
+    .card h4 {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    tr {
+        border: 1px solid #ddd;
+        border-left: none;
+        border-top: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0.5em 0;
+
+    }
+
+    thead tr {
+        border-top: 1px solid #ddd;
+        border-bottom: none;
+    }
+
+
+    tr > th,
+    tr > td {
+        flex: 1 1 150px;
+        border-left: 1px solid #ddd;
+    }
+
+    thead tr th {
+        border-left: 2px solid #ddd;
+    }
+
+}

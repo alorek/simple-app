@@ -9,7 +9,7 @@ class TableViewContainer extends Component {
     render() {
 
         const tableContainerStyles = {
-            maxWidth: '700px',
+            maxWidth: '1000px',
             margin: '0 auto',
             backgroundColor: '#ffffff'
         };

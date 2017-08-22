@@ -2,7 +2,12 @@
 
 exports[`SearchBox renders correctly 1`] = `
 <div
-  className="input-group"
+  style={
+    Object {
+      "marginBottom": "10px",
+      "position": "relative",
+    }
+  }
 >
   <input
     className="form-control"
@@ -11,23 +16,23 @@ exports[`SearchBox renders correctly 1`] = `
     style={
       Object {
         "background": "transparent",
-        "borderRight": "none",
         "boxShadow": "inset 0 1px 0px rgba(0, 0, 0, .075)",
+        "width": "100%",
       }
     }
     type="text"
   />
-  <span
-    className="input-group-addon"
+  <i
+    className="glyphicon glyphicon-search"
     style={
       Object {
         "background": "transparent",
+        "color": "#666666",
+        "position": "absolute",
+        "right": "10px",
+        "top": "10px",
       }
     }
-  >
-    <i
-      className="glyphicon glyphicon-search"
-    />
-  </span>
+  />
 </div>
 `;

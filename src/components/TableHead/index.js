@@ -8,7 +8,7 @@ class TableHead extends Component {
     renderColumns() {
         return this.props.dataKeys.map(key => {
             const column = {
-                label: key === 'viewable' ? '' : titleize(key.replace('_', ' ')),
+                label: key === 'viewable' ? 'Details' : titleize(key.replace('_', ' ')),
                 id: key
             };
             return <TableHeader key={ key } column = { column } />

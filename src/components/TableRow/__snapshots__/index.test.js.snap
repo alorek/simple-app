@@ -6,6 +6,8 @@ exports[`TableRow renders correctly 1`] = `
   <td />
   <td />
   <td />
-  <td />
+  <td>
+    n/a
+  </td>
 </tr>
 `;

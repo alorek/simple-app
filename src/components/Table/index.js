@@ -23,7 +23,7 @@ class Table extends Component {
         ];
 
         return (
-            <table className="table table-striped">
+            <table className="table">
                 <TableHead dataKeys = { columns } />
                 <tbody>{ this.createRows() }</tbody>
             </table>

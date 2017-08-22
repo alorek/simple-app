@@ -36,8 +36,7 @@ class RecordView extends Component {
                  width: '100%'
             };
             const additionalTextStyle = {
-                color: '#666666',
-                fontSize: '14px'
+                color: '#666666'
             };
 
 

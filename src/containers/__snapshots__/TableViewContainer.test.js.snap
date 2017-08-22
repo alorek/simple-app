@@ -10,12 +10,17 @@ exports[`TableViewContainer renders correctly 1`] = `
       Object {
         "backgroundColor": "#ffffff",
         "margin": "0 auto",
-        "maxWidth": "700px",
+        "maxWidth": "1000px",
       }
     }
   >
     <div
-      className="input-group"
+      style={
+        Object {
+          "marginBottom": "10px",
+          "position": "relative",
+        }
+      }
     >
       <input
         className="form-control"
@@ -24,27 +29,27 @@ exports[`TableViewContainer renders correctly 1`] = `
         style={
           Object {
             "background": "transparent",
-            "borderRight": "none",
             "boxShadow": "inset 0 1px 0px rgba(0, 0, 0, .075)",
+            "width": "100%",
           }
         }
         type="text"
       />
-      <span
-        className="input-group-addon"
+      <i
+        className="glyphicon glyphicon-search"
         style={
           Object {
             "background": "transparent",
+            "color": "#666666",
+            "position": "absolute",
+            "right": "10px",
+            "top": "10px",
           }
         }
-      >
-        <i
-          className="glyphicon glyphicon-search"
-        />
-      </span>
+      />
     </div>
     <table
-      className="table table-striped"
+      className="table"
     >
       <thead>
         <tr>
@@ -98,7 +103,7 @@ exports[`TableViewContainer renders correctly 1`] = `
             <span
               className="pull-left"
             >
-              
+              Details
             </span>
           </th>
         </tr>
@@ -122,9 +127,9 @@ exports[`TableViewContainer renders correctly 1`] = `
               href="/record/2166"
               onClick={[Function]}
             >
-              <span
-                className="glyphicon glyphicon-eye-open"
-              />
+              <span>
+                View
+              </span>
             </a>
           </td>
         </tr>
@@ -146,9 +151,9 @@ exports[`TableViewContainer renders correctly 1`] = `
               href="/record/1401"
               onClick={[Function]}
             >
-              <span
-                className="glyphicon glyphicon-eye-open"
-              />
+              <span>
+                View
+              </span>
             </a>
           </td>
         </tr>
@@ -165,7 +170,9 @@ exports[`TableViewContainer renders correctly 1`] = `
           <td>
             en-us
           </td>
-          <td />
+          <td>
+            n/a
+          </td>
         </tr>
         <tr>
           <td>
@@ -185,9 +192,9 @@ exports[`TableViewContainer renders correctly 1`] = `
               href="/record/2133"
               onClick={[Function]}
             >
-              <span
-                className="glyphicon glyphicon-eye-open"
-              />
+              <span>
+                View
+              </span>
             </a>
           </td>
         </tr>
@@ -209,9 +216,9 @@ exports[`TableViewContainer renders correctly 1`] = `
               href="/record/2189"
               onClick={[Function]}
             >
-              <span
-                className="glyphicon glyphicon-eye-open"
-              />
+              <span>
+                View
+              </span>
             </a>
           </td>
         </tr>

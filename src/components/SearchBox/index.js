@@ -22,30 +22,35 @@ class SearchBox extends Component {
     }
 
     render() {
-
+        const wrapperStyle = {
+            position: 'relative',
+            marginBottom: '10px'
+        };
         const inputStyle = {
             background: 'transparent',
-            borderRight: 'none',
-            boxShadow: 'inset 0 1px 0px rgba(0, 0, 0, .075)'
+            boxShadow: 'inset 0 1px 0px rgba(0, 0, 0, .075)',
+            width: '100%'
         };
-        const addOnStyle = {
+        const iconStyle = {
             background: 'transparent',
-
+            color: '#666666',
+            position: 'absolute',
+            right: '10px',
+            top: '10px'
         };
 
         return (
-            <div className="input-group">
+            <div style={ wrapperStyle }>
                 <input
                    onKeyUp={  this.onKeyUp  }
                    style={ inputStyle }
                     className="form-control"
                     placeholder="Search"
                     type="text"/>
-                <span
-                    className="input-group-addon"
-                    style={ addOnStyle }>
-                    <i className="glyphicon glyphicon-search"></i>
-                </span>
+
+                <i
+                    className="glyphicon glyphicon-search"
+                    style={ iconStyle }></i>
             </div>
         );
     }
