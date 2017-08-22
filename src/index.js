@@ -5,12 +5,12 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 
-import 'bootstrap/dist/css/bootstrap.css';
-import './index.css';
-
 import TableViewContainer from './containers/TableViewContainer';
 import RecordViewContainer  from './containers/RecordViewContainer';
 import reducer from './reducers';
+
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
 
 const store = createStore(reducer, devToolsEnhancer());
 

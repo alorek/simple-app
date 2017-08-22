@@ -15,25 +15,33 @@ exports[`TableViewContainer renders correctly 1`] = `
     }
   >
     <div
-      className="input-group add-on"
+      className="input-group"
     >
       <input
         className="form-control"
+        onKeyUp={[Function]}
         placeholder="Search"
+        style={
+          Object {
+            "background": "transparent",
+            "borderRight": "none",
+            "boxShadow": "inset 0 1px 0px rgba(0, 0, 0, .075)",
+          }
+        }
         type="text"
       />
-      <div
-        className="input-group-btn"
+      <span
+        className="input-group-addon"
+        style={
+          Object {
+            "background": "transparent",
+          }
+        }
       >
-        <button
-          className="btn btn-default"
-          type="submit"
-        >
-          <i
-            className="glyphicon glyphicon-search"
-          />
-        </button>
-      </div>
+        <i
+          className="glyphicon glyphicon-search"
+        />
+      </span>
     </div>
     <table
       className="table table-striped"

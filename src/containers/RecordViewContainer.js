@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+
 import RecordView from '../components/RecordView';
 import Button from '../components/Button';
 
 class RecordViewContainer extends Component {
+
     render() {
         const recordId = this.props.match.params.id;
         const goBack = () => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import TableRow from './index';
 
 test('TableRow renders correctly', () => {

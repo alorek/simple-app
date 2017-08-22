@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom'
 
 class TableRow extends Component {
+
     render() {
         const recordInfo = this.props.data || {};
         const isViewable = (recordInfo).viewable === 'true';

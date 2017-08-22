@@ -5,10 +5,9 @@ import renderer from 'react-test-renderer';
 import TableHead from './index';
 import reducer from '../../reducers';
 
-const store = createStore(reducer);
-
 test('TableHead renders correctly', () => {
 
+    const store = createStore(reducer);
     const dataKeys = ['resource_type'];
 
     const tree = renderer.create(

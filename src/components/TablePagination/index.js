@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import times from 'lodash/times';
+
 import { selectPage, nextPage, previousPage } from '../../actions';
 
 class TablePagination extends Component {
+
     render() {
         const currentPage = this.props.currentPage;
         const self = this;

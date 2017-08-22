@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+
 import Table from '../components/Table';
 import TablePagination from '../components/TablePagination';
 import SearchBox from '../components/SearchBox';
-import './tableViewContainer.css';
 
 class TableViewContainer extends Component {
+
     render() {
 
         const tableContainerStyles = {

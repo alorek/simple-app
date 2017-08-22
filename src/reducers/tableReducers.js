@@ -1,5 +1,5 @@
 import rawData from '../resources/Content.json';
-import { sortData, getPage } from './tableReducersUtils';
+import { filterData, sortData, getPage } from './tableReducersUtils';
 
 const PAGE_SIZE = 5;
 
@@ -11,29 +11,30 @@ const initialState = {
     tableData: data,
     sortKey: 'resource_type',
     sortOrder: 'asc',
-    currentPage: 1
+    currentPage: 1,
+    searchTerm: null
 };
 
 export default function tableReducer (state = initialState , action) {
     let sortedData = [];
     let currentPageData = [];
-    let filteredData = [];
+    let filteredData = state.searchTerm ?
+            filterData(state.data, state.searchTerm) :
+            state.data;
 
     switch (action.type) {
         case 'SEARCH_TABLE':
             filteredData = filterData(state.data, action.searchTerm);
-            sortedData = sortData(state.data, state.sortBy, state.sortOrder);
-
+            sortedData = sortData(filteredData, state.sortKey, state.sortOrder);
             currentPageData = getPage(sortedData, 1, PAGE_SIZE);
 
             return Object.assign({}, state, {
                 tableData: currentPageData,
-                sortKey: action.sortBy,
-                sortOrder: action.sortOrder,
-                currentPage: 1
+                currentPage: 1,
+                searchTerm: action.searchTerm
             });
         case 'SORT_TABLE':
-            sortedData = sortData(state.data, action.sortBy, action.sortOrder);
+            sortedData = sortData(filteredData, action.sortBy, action.sortOrder);
             currentPageData = getPage(sortedData, 1, PAGE_SIZE);
 
             return Object.assign({}, state, {
@@ -43,7 +44,7 @@ export default function tableReducer (state = initialState , action) {
                 currentPage: 1
             });
         case 'SELECT_PAGE':
-            sortedData = sortData(state.data, state.sortKey, state.sortOrder);
+            sortedData = sortData(filteredData, state.sortKey, state.sortOrder);
             currentPageData = getPage(sortedData, action.currentPage, PAGE_SIZE);
 
             return Object.assign({}, state, {
@@ -52,7 +53,8 @@ export default function tableReducer (state = initialState , action) {
             });
         case 'NEXT_PAGE':
             const nextPage = state.currentPage + 1;
-            sortedData = sortData(state.data, state.sortKey, state.sortOrder);
+
+            sortedData = sortData(filteredData, state.sortKey, state.sortOrder);
 
             if (nextPage > data.length/PAGE_SIZE) {
                 return state;
@@ -66,7 +68,7 @@ export default function tableReducer (state = initialState , action) {
             });
         case 'PREVIOUS_PAGE':
             const previousPage = state.currentPage - 1;
-            sortedData = sortData(state.data, state.sortKey, state.sortOrder);
+            sortedData = sortData(filteredData, state.sortKey, state.sortOrder);
 
             if (previousPage < 1) {
                 return state;

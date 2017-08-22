@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { titleize } from '../../utilities/textUtils';
 import TableHeader from '../TableHeader';
 
