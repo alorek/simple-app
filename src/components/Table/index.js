@@ -25,7 +25,7 @@ class Table extends Component {
         return (
             <table className="table table-striped">
                 <TableHead dataKeys = { columns } />
-                <tbody>{this.createRows()}</tbody>
+                <tbody>{ this.createRows() }</tbody>
             </table>
         );
     }

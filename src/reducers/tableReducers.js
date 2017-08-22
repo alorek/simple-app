@@ -4,7 +4,7 @@ import { filterData, sortData, getPage } from './tableReducersUtils';
 const PAGE_SIZE = 5;
 
 const data = ((((rawData || {}).response || {}).results || {}).result || [])
-    .map(row => ((row || {}).content || {}).resource);
+    .map(row => ((row || {}).content || {}).resource) || [];
 
 const initialState = {
     data: data,
@@ -28,6 +28,7 @@ export default function tableReducer (state = initialState , action) {
             sortedData = sortData(filteredData, state.sortKey, state.sortOrder);
             currentPageData = getPage(sortedData, 1, PAGE_SIZE);
 
+            // NOTE: Re-setting currentPage after search
             return Object.assign({}, state, {
                 tableData: currentPageData,
                 currentPage: 1,
@@ -37,6 +38,7 @@ export default function tableReducer (state = initialState , action) {
             sortedData = sortData(filteredData, action.sortBy, action.sortOrder);
             currentPageData = getPage(sortedData, 1, PAGE_SIZE);
 
+            // NOTE: Re-setting currentPage after sort
             return Object.assign({}, state, {
                 tableData: currentPageData,
                 sortKey: action.sortBy,

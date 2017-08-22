@@ -55,6 +55,7 @@ class SearchBox extends Component {
 function mapDispatchToProps (dispatch) {
     return bindActionCreators({searchTable: searchTable}, dispatch);
 }
+
 function mapStateToProps(state) {
     return {
         searchTerm: state.table.searchTerm

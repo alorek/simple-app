@@ -11,18 +11,15 @@ class TableHead extends Component {
                 label: key === 'viewable' ? '' : titleize(key.replace('_', ' ')),
                 id: key
             };
-            return <TableHeader key={key} column = { column } />
+            return <TableHeader key={ key } column = { column } />
         });
     }
 
     render() {
 
         return (
-
             <thead>
-                <tr>
-                    { this.renderColumns() }
-                </tr>
+                <tr>{ this.renderColumns() }</tr>
             </thead>
         );
     }

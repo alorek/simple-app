@@ -46,6 +46,7 @@ class TableHeader extends Component {
 function mapDispatchToProps (dispatch) {
     return bindActionCreators({ sortTable: sortTable }, dispatch);
 }
+
 function mapStateToProps(state) {
     return {
         sortKey: state.table.sortKey,
