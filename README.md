@@ -15,7 +15,13 @@ In the project directory:
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-##Run tests
+## Run tests
 `npm test`
 
-Launches the test runner in the interactive watch mode.
+## production build
+
+`npm run build`
+`npm install -g serve`
+`serve -s build`
+
+Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
