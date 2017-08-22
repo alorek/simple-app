@@ -17,9 +17,21 @@ const initialState = {
 export default function tableReducer (state = initialState , action) {
     let sortedData = [];
     let currentPageData = [];
+    let filteredData = [];
 
     switch (action.type) {
+        case 'SEARCH_TABLE':
+            filteredData = filterData(state.data, action.searchTerm);
+            sortedData = sortData(state.data, state.sortBy, state.sortOrder);
 
+            currentPageData = getPage(sortedData, 1, PAGE_SIZE);
+
+            return Object.assign({}, state, {
+                tableData: currentPageData,
+                sortKey: action.sortBy,
+                sortOrder: action.sortOrder,
+                currentPage: 1
+            });
         case 'SORT_TABLE':
             sortedData = sortData(state.data, action.sortBy, action.sortOrder);
             currentPageData = getPage(sortedData, 1, PAGE_SIZE);

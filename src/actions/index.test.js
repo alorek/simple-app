@@ -1,6 +1,13 @@
 import * as actions from './index'
 
 describe('actions', () => {
+    it('searchTable should create SORT_TABLE action', () => {
+        expect(actions.searchTable('some search term')).toEqual({
+            type: 'SEARCH_TABLE',
+            searchTerm: 'some search term'
+        });
+    });
+
     it('sortTable should create SORT_TABLE action', () => {
         expect(actions.sortTable('name', 'asc')).toEqual({
             type: 'SORT_TABLE',

@@ -1,3 +1,10 @@
+export const searchTable = (searchTerm) => {
+    return {
+        type: 'SEARCH_TABLE',
+        searchTerm
+    };
+};
+
 export const sortTable = (sortBy, sortOrder) => {
     return {
         type: 'SORT_TABLE',

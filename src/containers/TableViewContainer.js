@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Table from '../components/Table';
 import TablePagination from '../components/TablePagination';
+import SearchBox from '../components/SearchBox';
 import './tableViewContainer.css';
 
 class TableViewContainer extends Component {
@@ -15,6 +16,7 @@ class TableViewContainer extends Component {
         return (
             <div className="content-wrapper">
                 <div className="table-container card" style={ tableContainerStyles }>
+                    <SearchBox />
                     <Table />
                     <TablePagination />
                 </div>

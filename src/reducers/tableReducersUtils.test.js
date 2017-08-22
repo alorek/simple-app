@@ -1,4 +1,55 @@
-import { sortData, getPage } from './tableReducersUtils'
+import { filterData, sortData, getPage } from './tableReducersUtils'
+
+import includes from 'lodash/includes';
+
+describe('tableReducersUtils filterData', () => {
+    it('should return records containing search term', () => {
+
+        const records = [{
+            resource_type: 'Agile',
+            display_title: 'Some title',
+            media_type: 'pdf',
+            language: 'en-us'
+        }, {
+            resource_type: 'Type1',
+            display_title: 'Some title',
+            media_type: 'flash',
+            language: 'en-us'
+        }, {
+            resource_type: 'Type2',
+            display_title: 'Book',
+            media_type: 'html',
+            language: 'en-gb'
+        }];
+
+        let searchTerm = 'Agile';
+
+        expect(filterData(records, searchTerm).length).toEqual(1);
+        expect(filterData(records, searchTerm)[0].resource_type).toEqual('Agile');
+
+        searchTerm = 'Type';
+
+        expect(filterData(records, searchTerm).length).toEqual(2);
+        expect(filterData(records, searchTerm)[0].resource_type).toEqual('Type1');
+        expect(filterData(records, searchTerm)[1].resource_type).toEqual('Type2');
+
+        searchTerm = 'html';
+
+        expect(filterData(records, searchTerm).length).toEqual(1);
+        expect(filterData(records, searchTerm)[0].resource_type).toEqual('Type2');
+
+        searchTerm = 'en-gb';
+
+        expect(filterData(records, searchTerm).length).toEqual(1);
+        expect(filterData(records, searchTerm)[0].resource_type).toEqual('Type2');
+
+        searchTerm = 1;
+
+        expect(filterData(records, searchTerm).length).toEqual(1);
+        expect(filterData(records, searchTerm)[0].resource_type).toEqual('Type1');
+
+    });
+});
 
 describe('tableReducersUtils sortData', () => {
     it('should sort records by sortKey', () => {
@@ -22,8 +73,8 @@ describe('tableReducersUtils sortData', () => {
 
         expect(sortedByAge[0].name).toEqual('Bob');
         expect(sortedByAge[sortedByAge.length - 1].name).toEqual('Alice');
-    })
-})
+    });
+});
 
 describe('tableReducersUtils getPage', () => {
     it('should return current page records by sortKey', () => {
@@ -51,5 +102,5 @@ describe('tableReducersUtils getPage', () => {
         expect(secondPageOfThree[0].type).toEqual('strawberry');
         expect(secondPageOfThree[secondPageOfThree.length - 1].type).toEqual('peach');
 
-    })
-})
+    });
+});
