@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import find from 'lodash/find';
 
 class RecordView extends Component {
 
@@ -16,7 +17,7 @@ class RecordView extends Component {
     render() {
     	const recordId = this.props.recordId;
 
-    	const currentRecord = this.props.tableData.find(function(record) {
+    	const currentRecord = find(this.props.tableData, function(record) {
     		return record.id === recordId;
     	});
 
