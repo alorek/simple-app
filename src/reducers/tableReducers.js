@@ -5,13 +5,14 @@ const PAGE_SIZE = 5;
 
 const data = ((((rawData || {}).response || {}).results || {}).result || [])
     .map(row => ((row || {}).content || {}).resource) || [];
-
+const totalPages = data.length / PAGE_SIZE;
 const initialState = {
     data: data,
     tableData: data,
     sortKey: 'resource_type',
     sortOrder: 'asc',
     currentPage: 1,
+    totalPages: totalPages,
     searchTerm: null
 };
 
@@ -32,6 +33,7 @@ export default function tableReducer (state = initialState , action) {
             return Object.assign({}, state, {
                 tableData: currentPageData,
                 currentPage: 1,
+                totalPages: sortedData.length / PAGE_SIZE,
                 searchTerm: action.searchTerm
             });
         case 'SORT_TABLE':
@@ -58,7 +60,7 @@ export default function tableReducer (state = initialState , action) {
 
             sortedData = sortData(filteredData, state.sortKey, state.sortOrder);
 
-            if (nextPage > data.length/PAGE_SIZE) {
+            if (nextPage > state.totalPages) {
                 return state;
             }
 

@@ -8,9 +8,12 @@ import { selectPage, nextPage, previousPage } from '../../actions';
 class TablePagination extends Component {
 
     render() {
+        if (this.props.totalPages < 1) {
+            return (<div></div>);
+        }
         const currentPage = this.props.currentPage;
         const self = this;
-        const pages = times((this.props.data.length / 5), function(i) {
+        const pages = times(this.props.totalPages, function(i) {
             const page = i + 1;
             const isActive = page === currentPage;
 
@@ -51,7 +54,7 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state){
     return {
         currentPage: state.table.currentPage,
-        data: state.table.data
+        totalPages: state.table.totalPages
     };
 }
 
